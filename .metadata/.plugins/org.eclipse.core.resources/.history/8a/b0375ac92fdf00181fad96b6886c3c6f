@@ -1,0 +1,9 @@
+package tcp.socket;
+/**
+ * 面向连接  类似打电话
+ * 
+ */
+
+public class Client {
+
+}

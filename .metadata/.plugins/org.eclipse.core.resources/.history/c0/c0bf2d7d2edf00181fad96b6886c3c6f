@@ -1,0 +1,5 @@
+package tcp.scoket;
+
+public class Client {
+
+}

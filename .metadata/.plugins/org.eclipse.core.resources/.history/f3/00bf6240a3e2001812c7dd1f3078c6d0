@@ -1,0 +1,24 @@
+package test;
+/**
+ * 应用反射API，获取类的信息（类的名字、属性、方法、构造器等）
+ * @author 979739537
+ *
+ */
+public class Demo02 {
+	public static void main(String[] args) {
+		String path = "bean.User";
+		
+		try {
+			Class clazz = Class.forName(path);
+			
+			//获取类的名字
+			System.out.println(clazz.getName());//获的包名+类名：
+			System.out.println(clazz.getSimpleName());//获得类名：
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

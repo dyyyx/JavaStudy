@@ -1,0 +1,48 @@
+package test;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+/**
+ * 应用反射API，获取类的信息（类的名字、属性、方法、构造器等）
+ * @author 979739537
+ *
+ */
+public class Demo02 {
+	public static void main(String[] args) {
+		String path = "bean.User";
+		
+		try {
+			Class clazz = Class.forName(path);
+			
+			//获取类的名字
+			System.out.println(clazz.getName());//获的包名+类名：bean.User
+			System.out.println(clazz.getSimpleName());//获得类名：User
+			
+			//获取属性方法
+			//Field[] field = clazz.getFields(); 只能获得public的field
+			Field[] fields = clazz.getDeclaredFields();
+			Field f = clazz.getDeclaredField("name");
+			System.out.println(fields.length);
+			for(Field temp:fields) {
+				System.out.println("属性：" + temp);
+			}
+			
+			//获取方法信息
+			Method[] methods = clazz.getDeclaredMethods();
+			Method m01 = clazz.getDeclaredMethod("getName", null);
+			//如果方法有参，则必须传递参数类型对应的class对象
+			for(Method temp:methods) {
+				System.out.println("方法：" + temp);
+			}
+			
+			//获取构造器信息
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

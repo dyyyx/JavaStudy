@@ -1,0 +1,27 @@
+package test;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+/**
+ * 测试脚本引擎执行javascript
+ * @author 979739537
+ *
+ */
+public class Demo01 {
+	public static void main(String[] args) throws ScriptException {
+		//获得脚本引擎对象
+		ScriptEngineManager sem = new ScriptEngineManager();
+		ScriptEngine engine = sem.getEngineByName("javascript");
+		
+		//定义变量，储存到引擎的上下文
+		engine.put("msg", "dyx is a good man!");
+		String str = "var user = {name:'dyx', age:18, schools:['清华大学','北京大学' ] };";
+		str += "println(user.name);";
+		
+		//执行脚本
+		
+		engine.eval(str);
+	}
+}

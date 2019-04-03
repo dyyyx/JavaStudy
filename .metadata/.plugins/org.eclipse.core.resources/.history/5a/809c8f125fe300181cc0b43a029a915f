@@ -1,0 +1,16 @@
+package test;
+
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+
+public class Demo01 {
+	public static void main(String[] args) {
+		//通过IO流操作，将字符串储存成一个临时文件，然后调用动态编译方法！
+		String str = "public class Hi {public static void main(String[] args){System.out.println(\"Hi!\");}}";
+		Demo01.java
+		
+		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+		int result = compiler.run(null, null, null, "D:/Java/HelloWorld.java");
+		System.out.println(result==0?"编译成功":"编译失败");
+	}
+}

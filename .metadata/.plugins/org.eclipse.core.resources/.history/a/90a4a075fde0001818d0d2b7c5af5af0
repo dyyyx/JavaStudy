@@ -1,0 +1,18 @@
+package server.Demo02;
+
+import java.util.Map;
+
+public class Webapp {
+	private static ServletContext context;
+	static {
+		context = new ServletContext();
+		
+		Map<String, String> mapping = context.getMapping();
+		mapping.put("/login", "login");
+		mapping.put("/log", "login");
+		mapping.put("/reg", "register");
+		
+		Map<String, Servlet> servlet = context.getServlet();
+		servlet.put("login", value)
+	}
+}

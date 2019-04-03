@@ -1,0 +1,12 @@
+package tcp.chat;
+/**
+ * 创建客户端： 发送数据+接收数据
+ * 写出数据：输出流
+ * 读取数据：输入流
+ * 
+ * @author 979739537
+ *
+ */
+public class Client {
+
+}

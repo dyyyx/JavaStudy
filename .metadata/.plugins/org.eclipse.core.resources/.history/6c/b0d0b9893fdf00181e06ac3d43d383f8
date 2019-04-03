@@ -1,0 +1,5 @@
+package tcp.chat.Demo02;
+
+public class Receive {
+
+}

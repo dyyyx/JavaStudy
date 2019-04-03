@@ -1,0 +1,14 @@
+package snippet;
+
+public class Snippet {
+	try {
+				if(null!=fw) {
+					fw.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+}
+

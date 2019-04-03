@@ -1,0 +1,7 @@
+package tcp.scoket;
+
+public class Server {
+	public static void main(String[] args) {
+		//1. 创建服务器 指定端口 ServerSocket
+	}
+}

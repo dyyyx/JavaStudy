@@ -1,0 +1,42 @@
+package test;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+
+public class Demo01 {
+	public static void main(String[] args) {
+		
+		//通过IO流操作，将字符串储存成一个临时文件，然后调用动态编译方法！
+		String str = "public class Hi {public static void main(String[] args){System.out.println(\"Hi!\");}}";
+		File dest = new File("D:/Java/Hi.java");
+		BufferedWriter fw = null;
+		try {
+			fw = new BufferedWriter(new FileWriter(dest));
+			fw.write(str);
+			fw.flush();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			if(null!=fw) {
+				fw.close();
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+		int result = compiler.run(null, null, null, "D:/Java/HelloWorld.java");
+		System.out.println(result==0?"编译成功":"编译失败");
+		int result2 = compiler.run(null, null, null, "D:/Java/Hi.java");
+		System.out.println(result==0?"编译成功":"编译失败");
+	}
+}

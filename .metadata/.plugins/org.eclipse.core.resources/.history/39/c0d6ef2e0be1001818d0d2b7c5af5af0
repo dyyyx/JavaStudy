@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<servlet>
+	<name>login</name>
+	<servlet-name>server.Demo04.LoginServlet</servlet-name>
+</servlet>
+<mapping>
+	<name>login</name>
+	<url-name>/login</url-name>
+</mapping>
+<mapping>
+	<name>login</name>
+	<url-name>/log</url-name>
+</mapping>
+<servlet>
+	<name>reg</name>
+	<servlet-name>server.Demo04.RegisterServlet</servlet-name>
+</servlet>
+<mapping>
+	<name>reg</name>
+	<url-name>/reg</url-name>
+</mapping>
